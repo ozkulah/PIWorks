@@ -15,9 +15,6 @@ First one;
 Operation time : 8 sec
 
 
-
-
-
 Second one;
 - Program reads all file and create a object list
 - Use lambda expressions to;
@@ -29,4 +26,5 @@ Second one;
  - Show operation time for analyze the data
   
   Operation Time for Upload : 7 sec
+  
   Operation Time for Analyze: 0.8 sec
