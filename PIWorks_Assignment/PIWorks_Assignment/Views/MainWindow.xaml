@@ -1,0 +1,82 @@
+﻿<Window x:Class="PIWorks_Assignment.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PIWorks_Assignment.Views"
+        xmlns:localVMs="clr-namespace:PIWorks_Assignment.ViewModels"
+        xmlns:localModels="clr-namespace:PIWorks_Assignment.Models"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:md="https://github.com/fantasticfiasco/mvvm-dialogs"
+        mc:Ignorable="d"
+        Title="{Binding Title}" Height="750" Width="500"
+        WindowState="Normal"
+        ResizeMode="NoResize">
+
+    <Window.Resources>
+        <!-- Insert here your Data Templates -->
+        <DataTemplate x:Key="SampleTemplate">
+            <StackPanel/>
+        </DataTemplate>
+        
+    </Window.Resources>
+    <Window.InputBindings>
+        <!-- Example of Keyboard shortcuts -->
+        <KeyBinding Command="{Binding SaveCmd}" Key="S" Modifiers="Ctrl" />
+        <KeyBinding Command="{Binding SaveAsCmd}" Gesture="Ctrl+Shift+S" />
+        <KeyBinding Command="{Binding OpenCmd}" Gesture="Ctrl+O" />
+        <KeyBinding Command="{Binding NewCmd}" Gesture="Ctrl+N" />
+        <KeyBinding Command="{Binding ExitCmd}" Gesture="Alt+F4" />
+    </Window.InputBindings>
+
+    <DockPanel>
+        <!-- File Menu -->
+        <StackPanel>
+            <DockPanel Margin="10">
+                <WrapPanel HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,0,0">
+                    <Button Name="btnOpenFile" Width="100" Height="30" Click="btnOpenFile_Click">Open file</Button>
+                </WrapPanel>
+                    <TextBox Name="txtEditor" IsReadOnly="True"/>
+            </DockPanel>
+            <DockPanel Margin="10">
+                <Button Name="btnSingular" Click="btnSingular_Click" Margin="0,0,10,0" Width="230"  IsEnabled="False">Upload and Analyze Line by line</Button>
+                <StackPanel Margin="10,0,0,0">
+                    <Button Name="btnUploadFile" Click="btnUploadFile_Click" IsEnabled="False">Upload file</Button>
+                    <Button Name="btnAnalyzeAll" Click="btnAnalyzeAll_Click"  IsEnabled="False" Margin="0,5,0,0"  >Analyze All</Button>
+                </StackPanel>
+            </DockPanel>
+            <DockPanel Margin="10">
+                <Label Name="lblSingular" Background="AliceBlue" Margin="0,0,10,0" Width="230">Time of Upload and Analyze</Label>
+                <StackPanel Margin="10,0,0,0">
+                    <Label Name="lblUpload" Background="AliceBlue" Margin="0,0,0,0" Width="230">Time of Upload File</Label>
+                    <Label Name="lblAnalyzeAll" Background="AliceBlue" Margin="0,5,0,0" Width="230">Time of Analyze</Label>
+                </StackPanel>
+            </DockPanel>
+            <DockPanel Margin="10">
+                <DataGrid x:Name="DataGridForSingular" 
+                        Width="220"
+                        Height="500"
+                        ColumnWidth="*" Margin="10,10,0, 0" 
+                        VerticalAlignment="Top"
+                        AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Distinct Play Count" Binding="{Binding Key}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Client Count" Binding="{Binding Value}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <DataGrid x:Name="DataGridForAll" 
+                        Width="220"
+                        Height="500"
+                        ColumnWidth="*" Margin="10,10,0, 0" 
+                        VerticalAlignment="Top"
+                        AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Distinct Play Count" Binding="{Binding Key}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Client Count" Binding="{Binding Value}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>
