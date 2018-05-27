@@ -1,5 +1,4 @@
-# PIWorks
-PIWorks Exhibit 
+# PIWorks Assignment
 
 I solved the problem with two way
 
@@ -12,7 +11,7 @@ First one;
 - Bind dictionary to datagrid so user can see the result
 - Show operation time for upload and analyze the data
 
-Operation time : 8 sec
+Operation Time : 8 sec
 
 
 Second one;
