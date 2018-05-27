@@ -24,7 +24,7 @@ Second one;
   - Check Object's time stamp for spesific time
   - Calculate played song count for each client
   - Calculate distinct played count and return a dictionary
-  - Bind dictionary to datagrid so user can see the result
+ - Bind dictionary to datagrid so user can see the result
  - Show operation time for upload File
  - Show operation time for analyze the data
   
