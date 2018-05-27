@@ -1,6 +1,6 @@
 # PIWorks Assignment
 
-I solved the problem with two way
+I solved the problem with two ways
 
 First one;
 - Program reads file line by line
