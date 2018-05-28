@@ -130,12 +130,9 @@ namespace PIWorks_Assignment.ViewModels
                 //Check play time stamp for specific date
                 if (pSong.PLAY_TS.Date == August10.Date)
                 {
-                    //Check for repeated songs
-                    if (!clientHashSet.Contains(pSong))
-                        {
-                        //Add unique matches to hashset
-                        clientHashSet.Add(pSong);
-
+                    //Check for repeated songs and add distinct song - client matchs
+                    if(clientHashSet.Add(pSong))
+                    {
                         //Check the dictionary for client
                         if (countOfPlayedClientSongsDic.TryGetValue(pSong.CLIENT_ID, out int countOfSong))
                         {
