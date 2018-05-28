@@ -67,7 +67,7 @@ namespace PIWorks_Assignment.ViewModels
         //Analyzing data in lambda experessions
         //I seperated lambda expressions to three part for readability 
         //(One lambda expression method is in region Unused methods)
-        public Dictionary<int, int> UploadAllAndCountDistictValues(string csvFileName)
+        public Dictionary<int, int> CountAllDistictPlayedByClients()
         {
             //Eliminating the same song repeats and selecting songs on specific date
             var clientSongMatches = playedSongsList

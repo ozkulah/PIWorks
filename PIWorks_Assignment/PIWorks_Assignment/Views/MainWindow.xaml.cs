@@ -72,7 +72,7 @@ namespace PIWorks_Assignment.Views
         {
             DateTime difference = DateTime.Now; // Operation time begin
 
-            Dictionary<int, int> result = mv.UploadAndCountDistinctSongCountThirdWay();
+            Dictionary<int, int> result = mv.CountAllDistictPlayedByClients();
 
             TimeSpan dif = -difference.Subtract(DateTime.Now); //Calculate operation time
 
