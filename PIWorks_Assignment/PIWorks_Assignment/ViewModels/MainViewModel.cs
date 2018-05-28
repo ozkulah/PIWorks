@@ -24,16 +24,9 @@ namespace PIWorks_Assignment.ViewModels
             get { return "PIWorks Assignment"; }
         }
 
-        //Struct for Hashset usage
-        public struct ClientSongPair
-        {
-            public int clientID ;
-            public int songID;
-        }
-
         Dictionary<int, int> countOfDistinctPlayedByClientsDic = new Dictionary<int, int>();
         Dictionary<int, int> countOfPlayedClientSongsDic = new Dictionary<int, int>();
-        HashSet<ClientSongPair> clientHashSet = new HashSet<ClientSongPair>();
+        HashSet<PlayedSongsModel> clientHashSet = new HashSet<PlayedSongsModel>();
         PlayedSongsModel pSong;
 
         DateTime August10 = new DateTime(2016, 8, 10); //Spesific date for the question
@@ -126,7 +119,7 @@ namespace PIWorks_Assignment.ViewModels
         #endregion Upload and Analyze All using Lambda Expressions
 
         #region Upload and Analyze Line by Line using Dictionary and Hashset
-
+        
         //Uploading and analyzing data line by line
         public void UploadAndCountDistinctSongCountSingular(string line)
         {
@@ -137,16 +130,11 @@ namespace PIWorks_Assignment.ViewModels
                 //Check play time stamp for specific date
                 if (pSong.PLAY_TS.Date == August10.Date)
                 {
-                    //Create a struct for hash set to eliminate repeated songs
-                    ClientSongPair pair;
-                    pair.clientID = pSong.CLIENT_ID;
-                    pair.songID = pSong.SONG_ID;
-
                     //Check for repeated songs
-                    if (!clientHashSet.Contains(pair))
-                    {
+                    if (!clientHashSet.Contains(pSong))
+                        {
                         //Add unique matches to hashset
-                        clientHashSet.Add(pair);
+                        clientHashSet.Add(pSong);
 
                         //Check the dictionary for client
                         if (countOfPlayedClientSongsDic.TryGetValue(pSong.CLIENT_ID, out int countOfSong))
@@ -193,7 +181,7 @@ namespace PIWorks_Assignment.ViewModels
 
             //Console.WriteLine("Played Songs " + clientHashSet.Count);
             //Console.WriteLine("Client Played Count " + countOfDistinctPlayedByClientsDic.Count);
-
+            Console.WriteLine(clientHashSet.Count);
             return countOfDistinctPlayedByClientsDic;
         }
 

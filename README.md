@@ -11,7 +11,7 @@ First one;
 - Bind dictionary to datagrid so user can see the result
 - Show operation time for upload and analyze the data
 
-Operation Time : 8 sec
+Operation Time : 7.7 sec
 
 
 Second one;
@@ -24,6 +24,11 @@ Second one;
  - Show operation time for upload File
  - Show operation time for analyze the data
   
-  Operation Time for Upload : 7 sec
+  Operation Time for Upload : 7.44 sec
   
-  Operation Time for Analyze: 0.8 sec
+  Operation Time for Analyze: 0.7 sec
+
+  
+  
+  I also override the equal and gethashcode methods in PlayedSongsModel class so user can use "Contain()" and other methods on Hashset, list etc.
+  Overriding these methods increased the performance of first solution. 
