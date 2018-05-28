@@ -79,7 +79,7 @@ namespace PIWorks_Assignment.ViewModels
             return countOfDistinctPlayedByClients;
         }
 
-        #region Unused methods
+        #region Alternatve Lambda Methods
 
         //Reading and analyzing data in one lambda experssion
         public Dictionary<int, int> UploadAllAndCountDistictValuesAll(string csvFileName)
@@ -114,7 +114,7 @@ namespace PIWorks_Assignment.ViewModels
             return playedSongs;
         }
 
-        #endregion Unused methods
+        #endregion Alternatve Lambda Methods
 
         #endregion Upload and Analyze All using Lambda Expressions
 
@@ -181,7 +181,8 @@ namespace PIWorks_Assignment.ViewModels
 
             //Console.WriteLine("Played Songs " + clientHashSet.Count);
             //Console.WriteLine("Client Played Count " + countOfDistinctPlayedByClientsDic.Count);
-            Console.WriteLine(clientHashSet.Count);
+            //Console.WriteLine(clientHashSet.Count);
+
             return countOfDistinctPlayedByClientsDic;
         }
 

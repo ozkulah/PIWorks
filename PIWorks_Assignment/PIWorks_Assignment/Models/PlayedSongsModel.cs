@@ -28,10 +28,14 @@ namespace PIWorks_Assignment.Models
         //Equals methods are overrided so object contain/compare methods can be used in hashset and other lists
         public override bool Equals(object newplayedSongsModel)
         {
-            if (newplayedSongsModel == null) return false;
+            if (newplayedSongsModel == null)
+                return false;
+
             PlayedSongsModel playedSongsModel = newplayedSongsModel as PlayedSongsModel;
-            if (playedSongsModel == null) return false;
-            else return Equals(playedSongsModel);
+            if (playedSongsModel == null)
+                return false;
+            else
+                return Equals(playedSongsModel);
         }
 
         //Create a unique and fast hashcode for our task
@@ -47,7 +51,9 @@ namespace PIWorks_Assignment.Models
         //Only CLIENT_ID & SONG_ID used to compare because other variables always different and unimportant in our task
         public bool Equals(PlayedSongsModel other)
         {
-            if (other == null) return false;
+            if (other == null)
+                return false;
+
             return (this.CLIENT_ID.Equals(other.CLIENT_ID) && this.SONG_ID.Equals(other.SONG_ID));
         }
     }
